@@ -11,4 +11,7 @@ use Core\App;
 
 $app = new App();
 
+// add router
+$app->add('/'); // root url
+
 return $app;
