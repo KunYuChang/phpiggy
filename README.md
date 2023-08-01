@@ -6,6 +6,14 @@ App/bootstrap.php 負責加載和配置應用程式所需的文件。
 
 public/index.php 負責啟動應用程式。
 
+## Autoload
+
+1. PSR-4 並不是唯一可用於 Autoload 的標準，PHP 社群還有其他可用於 Autoload 的標準。
+2. 因此，我們必須指定我們想要使用的標準。
+3. key使用命名空間，value則是類別的目錄。
+4. 修改Composer.json之後，需要手動更新autoload列表。
+    `composer dump-autoload`
+
 ## Reference
 
 Text Editors: 

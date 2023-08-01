@@ -5,7 +5,7 @@
 
 declare(strict_types=1);
 
-include __DIR__ . "/../Core/App.php";
+require __DIR__ . "/../../vendor/autoload.php";
 
 use Core\App;
 
