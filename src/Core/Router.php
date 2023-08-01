@@ -8,9 +8,10 @@ class Router
 {
     private array $routes = [];
 
-    public function add(string $path)
+    public function add(string $method, string $path)
     {
         $this->routes[] = [
+            'method' => strtoupper($method),
             'path' => $path
         ];
     }

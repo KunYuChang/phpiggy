@@ -21,8 +21,8 @@ class App
     }
 
     // for Router : 如果要從私有屬性的實例中調用方法，我們就必須另外定義一個方法來使用。
-    public function add(string $path)
+    public function get(string $path)
     {
-        $this->router->add($path);
+        $this->router->add('GET', $path);
     }
 }
