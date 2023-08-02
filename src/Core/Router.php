@@ -11,6 +11,8 @@ class Router
     public function add(string $method, string $path, array $controller)
     {
         $path = $this->normalizePath($path);
+
+        // 這個陣列在 dispatch method 會使用
         $this->routes[] = [
             'method' => strtoupper($method),
             'path' => $path,
@@ -28,6 +30,7 @@ class Router
     // dispatch 意思是將某物發送到目的地
     public function dispatch(string $path, string $method)
     {
+        // algin router add method
         $path = $this->normalizePath($path);
         $method = strtoupper($method);
 
@@ -40,7 +43,9 @@ class Router
                 continue;
             }
 
-            echo 'route found';
+            [$controllerNameSpace, $controllerMethod] = $route['controller']; // Destructuring assignment
+            $controllerInstance = new $controllerNameSpace; // new 指向具有命名空間的類別字串可以建立實例
+            $controllerInstance->{$controllerMethod}(); // 將路由發送到控制器
         }
     }
 }
