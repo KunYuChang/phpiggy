@@ -11,7 +11,7 @@ use Core\App;
 
 $app = new App();
 
-// add router
-$app->get('/'); // root url
+// add router (contain the name of the class and method in the array)
+$app->get('/', ['App\Controllers\HomeController',]); // root url
 
 return $app;
