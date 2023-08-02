@@ -15,9 +15,14 @@ class App
         $this->router = new Router();
     }
 
+    // Request -> Router -> Controller
     public function run()
     {
-        echo "Application is running";
+        // 只取得URL即可
+        $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        $method = $_SERVER['REQUEST_METHOD'];
+
+        $this->router->dispatch($path, $method);
     }
 
     // for Router : 如果要從私有屬性的實例中調用方法，我們就必須另外定義一個方法來使用。
