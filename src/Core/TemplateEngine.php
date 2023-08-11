@@ -6,4 +6,8 @@ namespace Core;
 
 class TemplateEngine
 {
+    public function __construct(
+        private string $basePath
+    ) {
+    }
 }
