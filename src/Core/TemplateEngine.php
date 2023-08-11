@@ -10,4 +10,9 @@ class TemplateEngine
         private string $basePath
     ) {
     }
+
+    public function render(string $template)
+    {
+        include "{$this->basePath}/{$template}";
+    }
 }
