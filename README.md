@@ -100,10 +100,8 @@ XSS is short for cross-site scripting. It's when malicious code is inserted into
 
 ## Containers and Dependency Injection
 
-php What is dependency injection?
+依賴注入是一種軟體設計技巧，管理物件之間的依賴關係，實務上的運用原理為將一個物件所需要的相依物件通過外部方式（例如構造函數、方法參數等）傳遞給該物件，而不是讓該物件自行創建。這樣可以減少物件之間的耦合，增加程式碼的可測試性和可維護性。
 
-A system that does two things; create instances and pass them on to our classes
+容器則是依賴注入的實現方式之一。它是一個物件，包含了創建其他類別實例的指示，通常這些指示會在容器定義檔中配置。當我們需要某個類別的實例時，我們不直接在程式碼中創建，而是通過函數來動態生成所需的實例。
 
-php What is a container?
-
-A container is an object containing instructions for creating instances of classes.
+這種從函數中創建出實例的方式，也被稱為工廠設計模式。設計模式是軟體工程中的一種經過概括和抽象的解決特定軟體設計問題的常見方法或指導原則。這些模式通常是過去實踐經驗的總結，被廣泛接受並被證明是有效的解決方案，可以用於許多不同情境的軟體設計中。
