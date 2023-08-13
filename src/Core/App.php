@@ -9,10 +9,12 @@ namespace Core;
 class App
 {
     private Router $router;
+    private Container $container;
 
     public function __construct()
     {
         $this->router = new Router();
+        $this->container = new Container();
     }
 
     // Request -> Router -> Controller

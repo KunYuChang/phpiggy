@@ -97,3 +97,13 @@ Escaping is the process converting a character into a different character for se
 php What is XSS?
 
 XSS is short for cross-site scripting. It's when malicious code is inserted into a template.
+
+## Containers and Dependency Injection
+
+php What is dependency injection?
+
+A system that does two things; create instances and pass them on to our classes
+
+php What is a container?
+
+A container is an object containing instructions for creating instances of classes.
