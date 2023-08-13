@@ -28,7 +28,7 @@ class Router
     }
 
     // dispatch 意思是將某物發送到目的地
-    public function dispatch(string $path, string $method)
+    public function dispatch(string $path, string $method, Container $container = null)
     {
         // algin router add method
         $path = $this->normalizePath($path);
@@ -43,9 +43,9 @@ class Router
                 continue;
             }
 
-            [$controllerNameSpace, $controllerMethod] = $route['controller']; // Destructuring assignment
-            $controllerInstance = new $controllerNameSpace; // new 指向具有命名空間的類別字串可以建立實例
-            $controllerInstance->{$controllerMethod}(); // 將路由發送到控制器
+            [$class, $function] = $route['controller']; // Destructuring assignment
+            $controllerInstance = $container ? $container->resolve($class) : new $class;
+            $controllerInstance->{$function}(); // 將路由發送到控制器
         }
     }
 }
