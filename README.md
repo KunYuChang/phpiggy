@@ -79,3 +79,11 @@ PSR-12 Auto Formatting
 Extracting Arrays
 
 [extract() Function](https://www.php.net/manual/en/function.extract.php)
+
+php PHP Behavior
+
+By default, PHP sends content directly to the browser as its written.
+
+php What is output buffering?
+
+A feature for storing content in memory to prevent it from being sent to the browser immediately.
