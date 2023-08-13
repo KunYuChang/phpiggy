@@ -15,6 +15,9 @@
         "psr-4": {
             "Core\\": "src/Core",
             "App\\": "src/App"
-        }
-    }
+        },
+        "files": [
+            "src/App/Config/Routes.php"
+        ]
+    }    
 }
