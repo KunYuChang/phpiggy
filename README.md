@@ -87,3 +87,13 @@ By default, PHP sends content directly to the browser as its written.
 php What is output buffering?
 
 A feature for storing content in memory to prevent it from being sent to the browser immediately.
+
+php What is escaping?
+
+Escaping is the process converting a character into a different character for security.
+
+[htmlspecialchars](https://www.php.net/manual/en/function.htmlspecialchars.php)
+
+php What is XSS?
+
+XSS is short for cross-site scripting. It's when malicious code is inserted into a template.
