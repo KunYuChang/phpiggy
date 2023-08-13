@@ -18,9 +18,14 @@ class TemplateEngine
         extract($data, EXTR_SKIP);
 
         ob_start();
-        include "{$this->basePath}/{$template}";
+        include $this->fullPath($template);
         $output = ob_get_contents();
         ob_end_clean();
         return $output;
+    }
+
+    public function fullPath(string $path)
+    {
+        return "{$this->basePath}/{$path}";
     }
 }
