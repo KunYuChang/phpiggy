@@ -11,10 +11,16 @@ class App
     private Router $router;
     private Container $container;
 
-    public function __construct()
+    public function __construct(string $containerDefinitionsPath = null)
     {
         $this->router = new Router();
         $this->container = new Container();
+
+        // 容器定義檔
+        if ($containerDefinitionsPath) {
+            $containerDefinitions = include $containerDefinitionsPath;
+            $this->container->addDefinitions($containerDefinitions);
+        }
     }
 
     // Request -> Router -> Controller

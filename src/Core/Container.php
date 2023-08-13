@@ -6,4 +6,10 @@ namespace Core;
 
 class Container
 {
+    private array $definitions = []; // 定義
+
+    public function addDefinitions(array $newDefinitions)
+    {
+        dd($newDefinitions);
+    }
 }
