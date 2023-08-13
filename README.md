@@ -49,3 +49,33 @@ Installing Composer
 [Composer](https://getcomposer.org/)
 
 [composer.json schema](https://getcomposer.org/doc/04-schema.md#the-composer-json-schema)
+
+## Routing
+
+Apache Mod Rewrite
+
+[Apache Module mod_rewrite](https://httpd.apache.org/docs/2.4/mod/mod_rewrite.html)
+
+[Server Superglobal Variable](https://www.php.net/manual/en/reserved.variables.server.php)
+
+[htaccess File](https://httpd.apache.org/docs/2.4/howto/htaccess.html)
+
+HTTP Methods in Routes
+
+[HTTP Request Methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
+
+Regular Expressions in PHP
+
+[regex101](https://regex101.com/)
+
+[PCRE Functions](https://www.php.net/manual/en/ref.pcre.php)
+
+PSR-12 Auto Formatting
+
+[PSR-12](https://www.php-fig.org/psr/psr-12/)
+
+## Template Engines
+
+Extracting Arrays
+
+[extract() Function](https://www.php.net/manual/en/function.extract.php)
