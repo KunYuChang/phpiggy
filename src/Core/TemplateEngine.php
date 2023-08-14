@@ -6,6 +6,8 @@ namespace Core;
 
 class TemplateEngine
 {
+    private array $globalTemplateData = [];
+
     public function __construct(
         private string $basePath
     ) {
@@ -16,6 +18,7 @@ class TemplateEngine
         // extract 可以依據陣列中的 key 創建變數。
         // EXTR_SKIP 代表如果 extract 創建的變數名稱與原本的存在的變數相同時，則忽略不創建。
         extract($data, EXTR_SKIP);
+        extract($this->globalTemplateData, EXTR_SKIP);
 
         ob_start();
         include $this->fullPath($template);
@@ -27,5 +30,10 @@ class TemplateEngine
     public function fullPath(string $path)
     {
         return "{$this->basePath}/{$path}";
+    }
+
+    public function addGlobal(string $key, mixed $value)
+    {
+        $this->globalTemplateData[$key] = $value;
     }
 }
