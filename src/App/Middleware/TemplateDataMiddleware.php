@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace App\Middleware;
 
-class TemplateDataMiddleware
+use Core\Contracts\MiddlewareInterface;
+
+class TemplateDataMiddleware implements MiddlewareInterface
 {
+    public function process(callable $next)
+    {
+    }
 }
