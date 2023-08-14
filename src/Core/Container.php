@@ -62,7 +62,9 @@ class Container
             $dependencies[] = $this->get($type->getName());
         }
 
-        dd($dependencies);
+        // 1. Instantiate the class.
+        // 2. Dependencies required by the constructor are also instantiated and passed to the constructor.
+        return $reflectionClass->newInstanceArgs($dependencies);
     }
 
     public function get(string $id)
