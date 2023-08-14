@@ -25,6 +25,13 @@ class Container
             throw new ContainerException("Class {$className} is not instantiable");
         }
 
+        $constructor = $reflectionClass->getConstructor();
+
+        // If the method doesn't exist, we dont have to bother checking for dependencies.
+        if (!$constructor) {
+            return new $className;
+        }
+
         dd($reflectionClass);
     }
 }
