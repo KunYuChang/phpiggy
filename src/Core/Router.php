@@ -46,7 +46,17 @@ class Router
 
             [$class, $function] = $route['controller']; // Destructuring assignment
             $controllerInstance = $container ? $container->resolve($class) : new $class;
-            $controllerInstance->{$function}(); // 將路由發送到控制器
+            $action = fn () => $controllerInstance->{$function}(); // 將路由發送到控制器
+
+            // Looping through Middleware
+            foreach ($this->middlewares as $middleware) {
+                $middlewareInstance = new $middleware;
+                $action = fn () => $middlewareInstance->process($action);
+            }
+
+            $action();
+
+            return;
         }
     }
 
