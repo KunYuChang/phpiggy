@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Core;
 
-use ReflectionClass;
+use ReflectionClass, ReflectionNamedType;
 use Core\Exceptions\ContainerException;
 
 class Container
@@ -27,11 +27,22 @@ class Container
 
         $constructor = $reflectionClass->getConstructor();
 
-        // If the method doesn't exist, we dont have to bother checking for dependencies.
+        // (1) If the method doesn't exist, we dont have to bother checking for dependencies.
         if (!$constructor) {
             return new $className;
         }
 
-        dd($reflectionClass);
+        // return array of paramters
+        $params = $constructor->getParameters();
+
+        // (2) if params zero, this means the array is empty
+        if (count($params) === 0) {
+            return new $className;
+        }
+
+        // The dependencies variable is going to store the instances or dependencies required by our controller.
+        $dependencies = [];
+
+        dd($params);
     }
 }
