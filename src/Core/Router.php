@@ -7,6 +7,7 @@ namespace Core;
 class Router
 {
     private array $routes = [];
+    private array $middlewares = [];
 
     public function add(string $method, string $path, array $controller)
     {
@@ -47,5 +48,10 @@ class Router
             $controllerInstance = $container ? $container->resolve($class) : new $class;
             $controllerInstance->{$function}(); // 將路由發送到控制器
         }
+    }
+
+    public function addMiddleware(string $middleware)
+    {
+        $this->middlewares[] = $middleware;
     }
 }

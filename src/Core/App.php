@@ -39,4 +39,9 @@ class App
         // 依據 $path 對應到 $controller
         $this->router->add('GET', $path, $controller);
     }
+
+    public function addMiddleware(string $middleware)
+    {
+        $this->router->addMiddleware($middleware);
+    }
 }

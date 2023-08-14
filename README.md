@@ -109,3 +109,9 @@ XSS is short for cross-site scripting. It's when malicious code is inserted into
 ## Reflective Programming
 
 A feature for a program to look at itself and inspect its properties.
+
+## Middleware
+
+php What is middleware?
+
+A function that can run before or after a controller has been executed.
