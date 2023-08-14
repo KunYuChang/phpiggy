@@ -10,7 +10,7 @@ use App\Config\Paths;
 class HomeController
 {
     public function __construct(
-        private TemplateEngine $view
+        private TemplateEngine $view,
     ) {
     }
 

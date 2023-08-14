@@ -6,6 +6,7 @@ namespace Core;
 
 use ReflectionClass, ReflectionNamedType;
 use Core\Exceptions\ContainerException;
+use ReflectionType;
 
 class Container
 {
@@ -32,7 +33,7 @@ class Container
             return new $className;
         }
 
-        // return array of paramters
+        // return array of instances of the reflection
         $params = $constructor->getParameters();
 
         // (2) if params zero, this means the array is empty
@@ -42,6 +43,22 @@ class Container
 
         // The dependencies variable is going to store the instances or dependencies required by our controller.
         $dependencies = [];
+
+        foreach ($params as $param) {
+            $name = $param->getName();
+            $type = $param->getType();
+
+            // we'll only accept classes as type hints for parameters.
+            // if a developer forgets to add a type hint, we won't be able to instantiate a class from the container.
+            if (!$type) {
+                throw new ContainerException("Failed to resolve class {$className} because param {$name} is missing a type hint.");
+            }
+
+            // this condition checks if the variable is not an instance of the reflection named type.
+            if (!$type instanceof ReflectionNamedType || $type->isBuiltin()) {
+                throw new ContainerException("Failed to resolve class {$className} because invalid param name.");
+            }
+        }
 
         dd($params);
     }
