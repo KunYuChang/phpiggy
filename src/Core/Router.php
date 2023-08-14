@@ -45,12 +45,18 @@ class Router
             }
 
             [$class, $function] = $route['controller']; // Destructuring assignment
-            $controllerInstance = $container ? $container->resolve($class) : new $class;
+            $controllerInstance = $container ?
+                $container->resolve($class) :
+                new $class;
             $action = fn () => $controllerInstance->{$function}(); // 將路由發送到控制器
 
             // Looping through Middleware
             foreach ($this->middlewares as $middleware) {
-                $middlewareInstance = new $middleware;
+
+                // Supporting Dependency Injection in Middleware
+                $middlewareInstance = $container ?
+                    $container->resolve($middleware) :
+                    new $middleware;
                 $action = fn () => $middlewareInstance->process($action);
             }
 
