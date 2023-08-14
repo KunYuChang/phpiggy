@@ -10,7 +10,11 @@ use ReflectionType;
 
 class Container
 {
-    private array $definitions = []; // 定義
+    // 定義存儲類別工廠函式的陣列
+    private array $definitions = [];
+
+    // 定義已解析過的物件實例的陣列（用於單例模式）
+    private array $instances = [];
 
     public function addDefinitions(array $newDefinitions)
     {
@@ -73,8 +77,18 @@ class Container
             throw new ContainerException("Class {$id} does not exist in container.");
         }
 
+        // 檢查是否已經存在該 ID 的物件實例
+        if (array_key_exists($id, $this->instances)) {
+            // 如果已經存在，直接返回之前已創建的物件實例
+            return $this->instances[$id];
+        }
+
+        // 從定義中取得工廠函式，並呼叫以獲取實際的物件實例
         $factory = $this->definitions[$id];
         $dependency = $factory();
+
+        // 將解析的物件實例存入已解析陣列，以供下次判斷是否曾經實例過
+        $this->instances[$id] = $dependency;
 
         return $dependency;
     }
