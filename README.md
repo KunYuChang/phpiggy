@@ -115,3 +115,9 @@ A feature for a program to look at itself and inspect its properties.
 php What is middleware?
 
 A function that can run before or after a controller has been executed.
+
+## Form Validation
+
+- GET - Retrieve a resource
+- POST - Create/Update a resource
+- DELETE - Delete a resource
