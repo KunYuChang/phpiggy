@@ -10,7 +10,7 @@ class Validator
 {
     private array $rules = [];
 
-    public function get(string $alias, RuleInterface $rule)
+    public function add(string $alias, RuleInterface $rule)
     {
         $this->rules[$alias] = $rule;
     }
