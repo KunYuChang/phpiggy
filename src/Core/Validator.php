@@ -15,8 +15,20 @@ class Validator
         $this->rules[$alias] = $rule;
     }
 
-    public function validate(array $formData)
+    public function validate(array $formData, array $fields)
     {
-        dd($formData);
+        // From Services
+        foreach ($fields as $fieldName => $rules) {
+            foreach ($rules as $rule) {
+                // From Rules
+                $ruleValidator = $this->rules[$rule];
+
+                if ($ruleValidator->validate($formData, $fieldName, [])) {
+                    continue;
+                }
+
+                echo 'Error';
+            }
+        }
     }
 }
