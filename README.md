@@ -137,3 +137,17 @@ Learn how services keep our codebase clean and concise.
 Thus category is meant for errors that will only occur while the application is running. It's meant for code that does not have to be fixed, but handled.
 
 [RuntimeException](https://www.php.net/manual/en/class.runtimeexception.php)
+
+## php What is an HTTP status code?
+
+An HTTP status code is a three-digit integer to inform the browser the status of a request.
+
+## php Types of Status Codes
+
+- 1xx - information
+- 2xx - Success
+- 3xx - Redirection
+- 4xx - Client Error
+- 5xx - Server Error
+
+[HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
