@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Core;
 
 use Core\Contracts\RuleInterface;
+use Core\Exceptions\ValidationException;
 
 class Validator
 {
@@ -34,7 +35,7 @@ class Validator
         }
 
         if (count($errors)) {
-            dd($errors);
+            throw new ValidationException();
         }
     }
 }

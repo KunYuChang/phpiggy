@@ -131,3 +131,9 @@ Learn how services keep our codebase clean and concise.
 控制器負責處理頁面的邏輯，但這是一個相當寬泛的定義，因為不同頁面的複雜程度有所不同。有些頁面可能只是呈現 HTML 內容，而其他頁面則可能涉及上傳文件、驗證表單資料、處理交易，甚至是播放影片等操作。單個頁面上可能需要執行多種不同的操作，這可能導致控制器變得極長，甚至長達數百行。大多數開發者（Developers）認為這種情況並不理想。
 
 為了避免這種情況，有一種被稱為 "Shinny Controllers, Fat Services" 的最佳實踐方法。這種方法的核心理念是，讓控制器只負責接收請求（Requests）並返回響應（Responses），而將其他具體的操作委託給服務（services）來處理。這樣可以使控制器保持精簡，將具體的業務邏輯與處理過程放在服務中，從而使程式碼更加組織有序且易於維護。
+
+## php What is the RuntimeException category?
+
+Thus category is meant for errors that will only occur while the application is running. It's meant for code that does not have to be fixed, but handled.
+
+[RuntimeException](https://www.php.net/manual/en/class.runtimeexception.php)
