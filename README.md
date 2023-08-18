@@ -151,3 +151,9 @@ An HTTP status code is a three-digit integer to inform the browser the status of
 - 5xx - Server Error
 
 [HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+
+## php What is PRG?
+
+PRG is a pattern that stands for POST, Redirect, GET.
+
+該模式的優點是可以防止使用者重複提交表單。
