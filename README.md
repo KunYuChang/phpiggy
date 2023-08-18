@@ -157,3 +157,11 @@ An HTTP status code is a three-digit integer to inform the browser the status of
 PRG is a pattern that stands for POST, Redirect, GET.
 
 該模式的優點是可以防止使用者重複提交表單。
+
+## HTTP Referrer
+
+[HTTP Referrer](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer)
+
+HTTP Referrer（HTTP 引薦人）是一種在網際網路通訊協定中的一個標頭字段，它通常會被瀏覽器或用戶端應用程式在發送請求時附加在請求中。這個字段包含了先前網頁的網址，即從哪個頁面跳轉到了當前頁面。這對於網站分析、廣告追蹤和頁面間的流量控制等都非常有用。例如，當你點擊一個連結或者在網址欄輸入網址並按下 Enter 鍵時，瀏覽器會將來源網址作為 Referrer 發送給目標網址的伺服器，從而目標網址的伺服器知道了你是從哪個頁面跳轉過來的。
+
+然而，需要注意的是，由於隱私和安全的考慮，現在許多瀏覽器和網站已經限制了對於 Referrer 的傳遞，特別是當你從加密連接（HTTPS）的網址跳轉到非加密連接（HTTP）的網址時，通常不會將 Referrer 傳遞過去，以保護使用者的隱私。

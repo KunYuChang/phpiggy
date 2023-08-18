@@ -14,8 +14,8 @@ class ValidationExceptionMiddleware implements MiddlewareInterface
         try {
             $next();
         } catch (ValidationException $e) {
-            dd($e->errors);
-            redirect('/register');
+            $referer = $_SERVER['HTTP_REFERER'];
+            redirect($referer);
         }
     }
 }
