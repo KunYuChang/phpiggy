@@ -169,3 +169,7 @@ HTTP Referrer（HTTP 引薦人）是一種在網際網路通訊協定中的一�
 ## php What are sessions?
 
 Sessions are feature for storing data longer than a single request. They are destroyed after a user closes a browser.
+
+## Flash Message
+
+Flashing is a concept in programming where data is deleted after a single request.
